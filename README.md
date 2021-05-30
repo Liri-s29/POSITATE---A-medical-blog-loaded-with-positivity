@@ -55,14 +55,23 @@ As we were creating the website from scratch, we made our ideas into a prototype
 ```
 git clone https://github.com/Liri-s29/POSITATE---A-medical-blog-loaded-with-positivity
 ```
-Install Node.js if you don't have it [Node Download Link](https://nodejs.org/en/)
-**Then**
-Open termial in the directory, and run the following commands
+Install Node.js if you don't have it [Node Download Link](https://nodejs.org/en/) <br>
+**Then**<br>
+Open termial in the directory, and run the following commands<br>
+**To install the dependencies**
 ```
 npm i 
 ``` 
+**Run App**
 ```
 node app.js
 ```
+**You'll get a success message in your terminal**
+>Server in running on port 3001
+**Now open your browser** and enter the url
+>http://localhost:3001/
+Else [Click Here](http://localhost:3001/)
+
+
 
 
