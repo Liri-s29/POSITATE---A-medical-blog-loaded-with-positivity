@@ -58,7 +58,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:3001/auth/google/positate",
+      callbackURL: "https://positate.herokuapp.com/auth/google/positate",
     },
     function (accessToken, refreshToken, profile, cb) {
       User.findOrCreate(
