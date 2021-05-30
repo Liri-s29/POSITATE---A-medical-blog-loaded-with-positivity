@@ -67,7 +67,11 @@ npm i
 node app.js
 ```
 **You'll get a success message in your terminal**
-```Server in running on port 3001```
+```
+Server in running on port 3001
+```
 **Now open your browser** and [Click Here](http://localhost:3001/) or Enter the url below
-```http://localhost:3001/```
+```
+http://localhost:3001/
+```
 
