@@ -3,13 +3,14 @@ const express = require("express");
 const app = express();
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const session = require("cookie-session");
+const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 const timestamp = require("mongoose-timestamp");
 const _ = require("lodash");
+const MongoStore = require('connect-mongo');
 
 const auth = require("./routes/auth");
 const User = require("./database/models/user_model");
@@ -30,14 +31,28 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-app.use(
-  session({
-    secret: "My Secret",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {},
+// app.use(
+//   session({
+//     secret: "My Secret",
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: {},
+//   })
+// );
+app.use(session({
+  secret: "foo",
+  saveUninitialized: false,
+  resave: false,
+  store: MongoStore.create({
+    mongoUrl: 'mongodb+srv://admin-liri:kirisuna@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority',
+    mongoOptions: { useUnifiedTopology: true },
+    collectionName: 'sessions',
+    autoRemove: 'native',
+    
+    
   })
-);
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
