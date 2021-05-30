@@ -1,0 +1,33 @@
+<%- include("partials/header") -%>
+</head>
+<body>
+    <%- include("partials/navbar")-%>
+    <div class="container">
+        <form action="/blog/create" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title : </label>
+                <input type="text" class="form-control" name="title" placeholder="Blog Title" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="category">Category : </label>
+            <select class="form-control" name="category">
+                <option value="problem1">Alzhemiers</option>
+                <option value="problem2">Cancer</option>
+                <option value="problem3">Corona</option>
+                <option value="problem4">Handling Grief</option>
+                <option value="problem5">Mental Health</option>
+                <option value="problem6">Old Age</option>
+                <option value="problem7">Self-Care</option>
+                <option value="problem8">Specially Abled</option>
+              </select>
+            </div>
+            <div class="mb-3 ms-auto">
+                <label class="form-label" for="content">Content : </label><br>
+                <textarea name="content" class="form-control" id="" cols="" rows="10" placeholder="Blog Content" required></textarea>
+            </div>
+            <button class="btn btn-outline-success" type="submit">Create Blog</button><br>
+            
+            
+        </form>
+    </div>
+    <%- include("partials/footer") -%>

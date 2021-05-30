@@ -1,0 +1,42 @@
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 2;">
+    <div class="container">
+      <a class="navbar-brand" href="/secrets">POSITATE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/secrets">Home</a>
+          </li>
+          <li class="nav-item dropend ms-2">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Category
+            </a>
+            <ul class="dropdown-menu " style="z-index: 2;" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/category/problem1">Alzhemiers</a></li>
+              <li><a class="dropdown-item" href="/category/problem2">Cancer</a></li>
+              <li><a class="dropdown-item" href="/category/problem3">Corona</a></li>
+              <li><a class="dropdown-item" href="/category/problem4">Handing Grief</a></li>
+              <li><a class="dropdown-item" href="/category/problem5">Mental Health</a></li>
+              <li><a class="dropdown-item" href="/category/problem6">Old Age</a></li>
+              <li><a class="dropdown-item" href="/category/problem7">Self-Care</a></li>
+              <li><a class="dropdown-item" href="/category/problem8">Specially Abled</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="nav-item dropdown  ms-auto" >
+          <a class="nav-link dropdown-toggle dropleft" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="<%=user.image%>" style="height: 50px; width: 50px; border-radius: 100%;"  >
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <h4 class="dropdown-header"><%=user.name%></h4>
+            <li><a class="dropdown-item" href="/category/userpage">User Page</a></li>
+            <li><a class="dropdown-item" href="/createblog">Create Blog</a></li>
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </nav>

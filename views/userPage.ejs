@@ -1,0 +1,78 @@
+<%- include("partials/header") -%>
+<style>
+    .postbox{
+        display: inline;
+        box-shadow: 5px 8px #0cc; 
+        background-color: rgb(231, 253, 231);
+    }
+    .postbox:hover{
+        box-shadow: 5px 0px #0cc inset; 
+        /* background-color: #0cc; */
+    }
+</style>
+</head>
+<body>
+
+    <%- include("partials/navbar") -%>    
+    <main class="container-fluid mt-2 pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" style="z-index: -1">
+        <div class="row flex-grow-sm-1 flex-grow-0">
+            <div class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
+                <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                    <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                        <li class="nav-item mt-5">
+                            <a href="#" class="nav-link px-2 text-truncate">
+                                <i class="bi bi-house fs-4"></i>
+                                <img src="<%=user.image%>" class="rounded mx-auto d-block" alt="...">
+                            </a>
+                        </li>
+                        <li>
+                            
+                                <h2 class="text-center"><%=user.name%></h2>
+                            
+                        </li>
+                        <li class="mt-3">
+                            <p class="text-center"><%=user.username%></p>
+                        </li><br>
+                        <li class="text-center mt-2">
+                            <div class="btn btn-outline-dark ">
+                                <h1 class="text-center"><%=blog.length%></h1> <h1 class="text-center">Blogs</h1>
+                            </div>
+                        </li>
+                        <li class="text-center mt-5 mb-5">
+                            <a href="/createblog" class="btn btn-outline-success ">Create Blog</a>
+                                
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col container  h-50">
+                <div class="row tm-row">
+                    <% blog.forEach((blog)=>{%>
+                        <div class="col-12 col-md-11 tm-post mb-4 postbox"  >
+                            <hr style="border-top: 5px solid #0CC;">
+                            
+                                
+                            <h2 class="tm-pt-30  tm-post-title"><%= blog.title %></h2>
+                                                
+                            <p class="tm-pt-30">
+                                <%=blog.content.substring(0,301)%>... <a href="/category/blog/<%=blog._id%>wuserpage">Read More</a>
+                            </p>
+                            <div class="d-flex justify-content-between tm-pt-45">
+                                <span class=""><%= blog.createdAt%></span>
+                            </div>
+                            <hr style="border-top: 5px solid #0CC;">
+                            <img src="<%=blog.image%>" class="mb-2" style="height: 50px; width: 50px; border-radius: 100%;float: left"  >
+                    <h5 style="float: right" >By <%= blog.name%></h5>
+                            
+                        </div>
+                    <%})%>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+
+
+<%- include("partials/footer") -%>
