@@ -9,7 +9,6 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 const timestamp = require("mongoose-timestamp");
-const _ = require("lodash");
 const MongoStore = require('connect-mongo');
 
 const auth = require("./routes/auth");
@@ -18,7 +17,7 @@ const User = require("./database/models/user_model");
 const blogRoute = require("./routes/blogRoute");
 
 
-mongoose.connect("mongodb+srv://admin-liri:kirisuna@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://admin-liri:"+process.env.DBPASS+"@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -44,7 +43,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   store: MongoStore.create({
-    mongoUrl: 'mongodb+srv://admin-liri:kirisuna@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority',
+    mongoUrl: 'mongodb+srv://admin-liri:"+process.env.DBPASS+"@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority',
     mongoOptions: { useUnifiedTopology: true },
     collectionName: 'sessions',
     autoRemove: 'native',
@@ -69,8 +68,8 @@ passport.deserializeUser(function (id, done) {
 passport.use(
   new GoogleStrategy(
     {
-      clientID: "299125981145-1d99s1iljipim2fqn178kq6o73d36oef.apps.googleusercontent.com",
-      clientSecret: "HXyN6kXOTaS8ILaWd5rm9ihp",
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "http://localhost:3001/auth/google/positate" || "https://positate.herokuapp.com/auth/google/positate",
     },
     function (accessToken, refreshToken, profile, cb) {
@@ -89,7 +88,9 @@ passport.use(
   )
 );
 
-
+app.get("/", (req, res) => {
+  res.render("Landing");
+});
 
 app.use("/", auth);
 app.use("/blog", blogRoute);

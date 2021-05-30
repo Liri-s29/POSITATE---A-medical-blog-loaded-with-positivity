@@ -4,9 +4,7 @@ const passport = require("passport");
 const blogService = require('../service/blogService');
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("Landing");
-});
+
 
 router.post("/create",(req, res)=>{
     console.log('here in')
