@@ -50,3 +50,19 @@ As we were creating the website from scratch, we made our ideas into a prototype
 - Mongoose
 - MongoDB
 - Passport
+
+## How to use
+```
+git clone https://github.com/Liri-s29/POSITATE---A-medical-blog-loaded-with-positivity
+```
+Install Node.js if you don't have it [Node Download Link](https://nodejs.org/en/)
+**Then**
+Open termial in the directory, and run the following commands
+```
+npm i 
+``` 
+```
+node app.js
+```
+
+
