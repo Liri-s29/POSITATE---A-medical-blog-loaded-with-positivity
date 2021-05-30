@@ -30,25 +30,25 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// app.use(
-//   session({
-//     secret: "My Secret",
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: {},
-//   })
-// );
-app.use(session({
-  secret: "foo",
-  saveUninitialized: false,
-  resave: false,
-  store: MongoStore.create({
-    mongoUrl: "mongodb+srv://admin-liri:"+process.env.DBPASS+"@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority",
-    mongoOptions: { useUnifiedTopology: true },
-    collectionName: 'sessions',
-    autoRemove: 'native',
+app.use(
+  session({
+    secret: "My Secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {},
   })
-}));
+);
+// app.use(session({
+//   secret: "foo",
+//   saveUninitialized: false,
+//   resave: false,
+//   store: MongoStore.create({
+//     mongoUrl: "mongodb+srv://admin-liri:"+process.env.DBPASS+"@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority",
+//     mongoOptions: { useUnifiedTopology: true },
+//     collectionName: 'sessions',
+//     autoRemove: 'native',
+//   })
+// }));
 
 app.use(passport.initialize());
 app.use(passport.session());
