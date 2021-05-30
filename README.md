@@ -6,7 +6,29 @@
 </p>
 
 ## Instruction 
-
+## How to use
+```
+git clone https://github.com/Liri-s29/POSITATE---A-medical-blog-loaded-with-positivity
+```
+Install Node.js if you don't have it : [Node Download Link](https://nodejs.org/en/) <br>
+**Then**<br>
+Open termial in the directory, and run the following commands<br>
+**To install the dependencies**
+```
+npm i 
+``` 
+**Run App**
+```
+node app.js
+```
+**You'll get a success message in your terminal**
+```
+Server in running on port 3001
+```
+**Now open your browser** and [Click Here](http://localhost:3001/) or Enter the url below
+```
+http://localhost:3001/
+```
 
 ## What it does
 <p>
@@ -51,27 +73,4 @@ As we were creating the website from scratch, we made our ideas into a prototype
 - MongoDB
 - Passport
 
-## How to use
-```
-git clone https://github.com/Liri-s29/POSITATE---A-medical-blog-loaded-with-positivity
-```
-Install Node.js if you don't have it [Node Download Link](https://nodejs.org/en/) <br>
-**Then**<br>
-Open termial in the directory, and run the following commands<br>
-**To install the dependencies**
-```
-npm i 
-``` 
-**Run App**
-```
-node app.js
-```
-**You'll get a success message in your terminal**
-```
-Server in running on port 3001
-```
-**Now open your browser** and [Click Here](http://localhost:3001/) or Enter the url below
-```
-http://localhost:3001/
-```
 
