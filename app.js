@@ -48,8 +48,6 @@ app.use(session({
     mongoOptions: { useUnifiedTopology: true },
     collectionName: 'sessions',
     autoRemove: 'native',
-    
-    
   })
 }));
 
