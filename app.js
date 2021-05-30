@@ -43,7 +43,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   store: MongoStore.create({
-    mongoUrl: 'mongodb+srv://admin-liri:"+process.env.DBPASS+"@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority',
+    mongoUrl: "mongodb+srv://admin-liri:"+process.env.DBPASS+"@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority",
     mongoOptions: { useUnifiedTopology: true },
     collectionName: 'sessions',
     autoRemove: 'native',
