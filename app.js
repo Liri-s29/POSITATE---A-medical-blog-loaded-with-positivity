@@ -17,7 +17,7 @@ const User = require("./database/models/user_model");
 const blogRoute = require("./routes/blogRoute");
 
 
-mongoose.connect("mongodb+srv://admin-liri:"+process.env.DBPASS+"@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://admin-liri:"+kirisuna+"@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -56,9 +56,9 @@ passport.deserializeUser(function (id, done) {
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://positate.herokuapp.com/auth/google/positate",
+      clientID: "299125981145-1d99s1iljipim2fqn178kq6o73d36oef.apps.googleusercontent.com",
+      clientSecret: "HXyN6kXOTaS8ILaWd5rm9ihp",
+      callbackURL: "http://localhost:3001/auth/google/positate" || "https://positate.herokuapp.com/auth/google/positate",
     },
     function (accessToken, refreshToken, profile, cb) {
       User.findOrCreate(
