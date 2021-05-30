@@ -17,7 +17,7 @@ const User = require("./database/models/user_model");
 const blogRoute = require("./routes/blogRoute");
 
 
-mongoose.connect("mongodb+srv://admin-liri:"+kirisuna+"@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://admin-liri:kirisuna@cluster0.l3cay.mongodb.net/PositateDB?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
