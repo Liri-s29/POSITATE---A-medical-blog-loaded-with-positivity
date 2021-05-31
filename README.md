@@ -85,5 +85,10 @@ As we were creating the website from scratch, we made our ideas into a prototype
 - Mongoose
 - MongoDB
 - Passport
-
+##This is a Team Project by the BugBusters Team in the Hack On 2.0
+###Team Members
+- [Srihari](https://github.com/Liri-s29)
+- [Kailash](https://github.com/kail02)
+- [Namrutha](https://github.com/namruthahari)
+- [Grace](https://github.com/Grace-Hephzibah)
 
