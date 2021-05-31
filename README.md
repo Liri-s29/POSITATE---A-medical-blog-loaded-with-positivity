@@ -7,13 +7,14 @@
 
 ## Instruction 
 ## How to use
-```
-git clone https://github.com/Liri-s29/POSITATE---A-medical-blog-loaded-with-positivity
-```
+
 Install Node.js if you don't have it : [Node Download Link](https://nodejs.org/en/) //Download recommended Version <br>
 
-Open termial in the directory, and run the following commands<br>
-
+Open termial in a directory, and run the following commands<br>
+```
+git clone https://github.com/Liri-s29/POSITATE---A-medical-blog-loaded-with-positivity
+cd POSITATE---A-medical-blog-loaded-with-positivity
+```
 **To install the dependencies**
 ```
 npm i 
