@@ -18,7 +18,17 @@ Open termial in the directory, and run the following commands<br>
 ```
 npm i 
 ``` 
-**Run App**
+**Create a .env file**
+```
+touch .env
+```
+**Open the .env and add the following env vars**
+```
+GOOGLE_CLIENT_ID=   // Get this from https://console.cloud.google.com/apis/credentials //For setting up OAuth
+GOOGLE_CLIENT_SECRET= //Get this from https://console.cloud.google.com/apis/credentials //For setting up OAuth
+DBPASS= //Get this from MongoDB Atlas DataBase Access //For setting up DB
+```
+**Now, go back to the terminal and run**
 ```
 node app.js
 ```
