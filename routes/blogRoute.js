@@ -7,7 +7,6 @@ const router = express.Router();
 
 
 router.post("/create",(req, res)=>{
-    console.log('here in')
     if(req.isAuthenticated()){
         blogService.createBlog(req,res);
     }else{
@@ -64,7 +63,6 @@ router.post("/createcomment", (req, res)=>{
 
 router.get("/category/blog/:singleblog", (req, res)=>{
     if (req.isAuthenticated()) {
-        console.log("hey")
         blogService.singleBlog(req,res);
       
     } else {

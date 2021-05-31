@@ -20,7 +20,6 @@ const createBlog = (req,res) => {
         console.log(err);
         }else{
         
-        console.log("Success");
         res.redirect("/secrets")
         }
     }); 
@@ -28,14 +27,14 @@ const createBlog = (req,res) => {
 
 const userBlog = (req, res)=>{
     Blog.Blog.find({user_id: req.user._id},(err, foundBlogs)=>{
-        res.render("userPage",{blog: foundBlogs, user: req.user});
+        res.render("userPage",{blog: foundBlogs.reverse(), user: req.user});
 
       })
 }
 
 const allBlog = (req, res)=>{
     Blog.Blog.find({},(err, foundBlogs)=>{
-        res.render("allblogs",{blogs: foundBlogs, user: req.user})
+        res.render("allblogs",{blogs: foundBlogs.reverse(), user: req.user})
       });
 }
 
@@ -43,8 +42,7 @@ const blogCategory = (req, res)=>{
     const category = req.params.categoryname;
     Blog.Blog.find({category: category},(err, foundBlogs)=>{
         Asset.findOne({id: category}, (err, foundAsset)=>{
-          console.log(foundAsset);
-          res.render("category",{blogs: foundBlogs, user: req.user, asset: foundAsset});
+          res.render("category",{blogs: foundBlogs.reverse(), user: req.user, asset: foundAsset});
         })
         
         
@@ -64,7 +62,6 @@ const createComment = (req, res)=>{
         foundBlog.comment.push(newComment);
         foundBlog.save((err)=>{
           if(!err){
-            console.log("comment created!.")
             res.redirect("/category/blog/"+blogId+"w"+orign);
           }
         })
@@ -72,13 +69,10 @@ const createComment = (req, res)=>{
 }
 
 const singleBlog = (req, res)=>{
-    console.log("hey");
       const blog = req.params.singleblog.split("w");
       const blogId = blog[0];
       const blogOrign = blog[1];
-      console.log(blog)
       Blog.Blog.findOne({_id: blogId},(err, foundBlog)=>{
-        console.log(blog,foundBlog);
         const comments = foundBlog.comment;
         res.render("singleblog",{blog: foundBlog, user: req.user, orign: blogOrign, comments: comments});
       });

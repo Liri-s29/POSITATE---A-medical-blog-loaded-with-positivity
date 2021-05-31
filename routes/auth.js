@@ -49,8 +49,6 @@ router.post("/register", (req, res) => {
           (err, foundData) => {
             if (err) {
               console.log(err);
-            } else {
-              console.log(foundData);
             }
           }
         );
