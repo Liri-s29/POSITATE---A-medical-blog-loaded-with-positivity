@@ -10,7 +10,7 @@
 ```
 git clone https://github.com/Liri-s29/POSITATE---A-medical-blog-loaded-with-positivity
 ```
-Install Node.js if you don't have it : [Node Download Link](https://nodejs.org/en/) <br>
+Install Node.js if you don't have it : [Node Download Link](https://nodejs.org/en/) //Download recommended Version <br>
 
 Open termial in the directory, and run the following commands<br>
 
