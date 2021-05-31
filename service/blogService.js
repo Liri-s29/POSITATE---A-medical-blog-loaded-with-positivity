@@ -32,11 +32,6 @@ const userBlog = (req, res)=>{
       })
 }
 
-const allBlog = (req, res)=>{
-    Blog.Blog.find({},(err, foundBlogs)=>{
-        res.render("allblogs",{blogs: foundBlogs.reverse(), user: req.user})
-      });
-}
 
 const blogCategory = (req, res)=>{
     const category = req.params.categoryname;
@@ -81,7 +76,6 @@ const singleBlog = (req, res)=>{
 module.exports = {
     createBlog: createBlog,
     userBlog: userBlog,
-    allBlog: allBlog,
     blogCategory: blogCategory,
     createComment: createComment,
     singleBlog: singleBlog

@@ -32,16 +32,6 @@ router.get("/createblog", (req, res) => {
     }
 });
 
-
-router.get("/allblogs", (req, res)=>{
-    if (req.isAuthenticated()) {
-        blogService.allBlog(req,res);
-    } else {
-      res.redirect("/login");
-    }
-    
-});
-
 router.get("/:categoryname", (req, res)=>{
     if (req.isAuthenticated()) {
       

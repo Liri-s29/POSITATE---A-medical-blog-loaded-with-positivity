@@ -41,7 +41,7 @@
                     <h2 class="tm-pt-30  tm-post-title"><%= blog.title %></h2>
                                         
                     <p class="tm-pt-30">
-                        <%=blog.content.substring(0,301)%>... <a href="/category/blog/<%=blog._id%>wuserpage">Read More</a>
+                        <%=blog.content.substring(0,301)%>... <a href="/category/blog/<%=blog._id%>w<%=blog.category%>">Read More</a>
                     </p>
                     <div class="d-flex justify-content-between tm-pt-45">
                         <span class=""><%= blog.createdAt%></span>
@@ -49,7 +49,8 @@
                     <hr style="border-top: 5px solid #0CC;">
                     
                     <img src="<%=blog.image%>" class="mb-2" style="height: 50px; width: 50px; border-radius: 100%;float: left"  >
-                    <h5 style="float: right" >By <%= blog.name%></h5>
+                    <h5 style="float: right" >&nbsp By <%= blog.name%></h5>
+                    <h5 style="float: right"> <%= blog.comment.length%> Comments</h5>
                         
                     
                 </div>
