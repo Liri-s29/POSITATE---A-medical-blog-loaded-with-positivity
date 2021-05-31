@@ -17,6 +17,7 @@ Open termial in the directory, and run the following commands<br>
 **To install the dependencies**
 ```
 npm i 
+npm install -g touch-cli
 ``` 
 **Create a .env file**
 ```
