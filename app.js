@@ -88,9 +88,6 @@ passport.use(
   )
 );
 
-app.get("/", (req, res) => {
-  res.render("Landing");
-});
 
 app.use("/", auth);
 app.use("/blog", blogRoute);
