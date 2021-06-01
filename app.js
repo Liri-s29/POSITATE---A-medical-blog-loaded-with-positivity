@@ -24,7 +24,7 @@ mongoose.connect("mongodb+srv://admin-liri:"+process.env.DBPASS+"@cluster0.l3cay
 mongoose.set("useCreateIndex", true);
 mongoose.set("useFindAndModify", false);
 
-app.use(express.static("public"));
+app.use(express.static(__dirname+"/public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -70,7 +70,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://positate.herokuapp.com/auth/google/positate",
+      callbackURL: "https://positate.herokuapp.com/auth/google/positate" || "https://localhost:3001/auth/google/positate",
     },
     function (accessToken, refreshToken, profile, cb) {
       User.findOrCreate(
