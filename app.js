@@ -98,6 +98,6 @@ app.use("/", blogRoute);
 app.use("/category", blogRoute);
 
 
-app.listen(3001 || process.env.PORT, '0.0.0.0', () => {
+app.listen(process.env.PORT || 3001, () => {
   console.log("Server is running on port 3001.");
 });
