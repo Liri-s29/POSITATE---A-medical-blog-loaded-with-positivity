@@ -27,9 +27,20 @@ const createBlog = (req,res) => {
 
 const userBlog = (req, res)=>{
     Blog.Blog.find({user_id: req.user._id},(err, foundBlogs)=>{
+
         res.render("userPage",{blogs: foundBlogs.reverse(), user: req.user});
 
       })
+}
+
+const home = (req, res)=>{
+    Asset.find({},(err,foundAsset)=>{
+      if(!err){
+        Blog.Blog.find({},(err, foundBlogs)=>{
+          res.render("secrets", {user: req.user, assets: foundAsset, blogs: foundBlogs});
+        })  
+      }
+    })
 }
 
 
@@ -87,5 +98,6 @@ module.exports = {
     blogCategory: blogCategory,
     createComment: createComment,
     singleBlog: singleBlog,
-    deleteBlog: deleteBlog
+    deleteBlog: deleteBlog,
+    home: home
 }

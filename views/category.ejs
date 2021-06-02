@@ -39,11 +39,13 @@
         <h1><%=asset.name%></h1>
     </div>
     </header>
-    <div class="col container ">
-        <div class="row tm-row">
+    <div class="col container">
+        <div class="row">
             <% blogs.forEach((blog)=>{%>
-                <div class="col-12 col-md-12 tm-post mb-4 postbox mt-2" onclick="location.href='/category/blog/<%=blog._id%>w<%=blog.category%>'" >
-                    <hr style="border-top: 5px solid #0CC;">
+                
+                <div class="col-12 col-md-11 mt-2 postbox mx-auto" onclick="location.href='/category/blog/<%=blog._id%>w<%=blog.category%>'" >
+                    <div class="">  
+                     <hr style="border-top: 5px solid #0CC;">
                     
                         
                     <h2 class="tm-pt-30  tm-post-title"><%= blog.title %></h2>
@@ -59,12 +61,13 @@
                     <img src="<%=blog.image%>" class="mb-2" style="height: 50px; width: 50px; border-radius: 100%;float: left"  >
                     <h5 style="float: right" >&nbsp; By <%= blog.name%></h5>
                     <h5 style="float: right"> <%= blog.comment.length%> Comments</h5>
+                    </div>
                         
-                    
-                </div>
+                 
+                    </div>
             <%})%>
-            
-        </div>
+        </div>    
+        
     </div>
     
     <script src='home/js/jquery.js'></script>

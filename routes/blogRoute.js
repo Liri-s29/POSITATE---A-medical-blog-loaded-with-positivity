@@ -18,8 +18,8 @@ router.post("/create",(req, res)=>{
 
 router.get("/secrets", (req, res) => {
     if (req.isAuthenticated()) {
+      blogService.home(req,res);
       
-      res.render("secrets", {user: req.user});
     } else {
       res.redirect("/login");
     }
