@@ -2,12 +2,13 @@
 <style>
     .postbox{
         display: inline;
-        box-shadow: 5px 8px #0cc; 
         background-color: rgb(231, 253, 231);
+        border-radius: 20px;
+        transition: box-shadow .3s;
     }
     .postbox:hover{
-        box-shadow: 5px 0px #0cc inset; 
-        /* background-color: #0cc; */
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 204, 204, 0.301) 0px 30px 60px -30px;    
+        cursor: pointer;    
     }
 </style>
 </head>
@@ -35,7 +36,7 @@
                         </li><br>
                         <li class="text-center mt-2">
                             <div class="btn btn-outline-dark ">
-                                <h1 class="text-center"><%=blog.length%></h1> <h1 class="text-center">Blogs</h1>
+                                <h1 class="text-center"><%=blogs.length%></h1> <h1 class="text-center">Blogs</h1>
                             </div>
                         </li>
                         <li class="text-center mt-5 mb-5">
@@ -45,25 +46,27 @@
                     </ul>
                 </div>
             </div>
-            <div class="col container  h-50">
+            <div class="col container h-50" style="padding-right: 25px">
                 <div class="row tm-row">
-                    <% blog.forEach((blog)=>{%>
-                        <div class="col-12 col-md-11 tm-post mb-4 postbox"  >
+                    <% blogs.forEach((blog)=>{%>
+                        <div class="col-12 col-md-12 tm-post mb-4 postbox mt-2" onclick="location.href='/category/blog/<%=blog._id%>w<%=blog.category%>'" >
                             <hr style="border-top: 5px solid #0CC;">
                             
                                 
                             <h2 class="tm-pt-30  tm-post-title"><%= blog.title %></h2>
                                                 
                             <p class="tm-pt-30">
-                                <%=blog.content.substring(0,301)%>... <a href="/category/blog/<%=blog._id%>wuserpage">Read More</a>
+                                <%=blog.content.substring(0,301)%>... <a href="/category/blog/<%=blog._id%>w<%=blog.category%>">Read More</a>
                             </p>
                             <div class="d-flex justify-content-between tm-pt-45">
                                 <span class=""><%= blog.createdAt%></span>
                             </div>
                             <hr style="border-top: 5px solid #0CC;">
+                            
                             <img src="<%=blog.image%>" class="mb-2" style="height: 50px; width: 50px; border-radius: 100%;float: left"  >
-                            <h5 style="float: right" > &nbsp; By <%= blog.name%> </h5>
+                            <h5 style="float: right" >&nbsp; By <%= blog.name%></h5>
                             <h5 style="float: right"> <%= blog.comment.length%> Comments</h5>
+                                
                             
                         </div>
                     <%})%>

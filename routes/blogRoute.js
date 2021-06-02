@@ -71,6 +71,15 @@ router.get("/category/userpage", (req, res) => {
   }
 });
 
+router.post("/blog/delete", (req, res) => {
+  if (req.isAuthenticated()) {
+    
+      blogService.deleteBlog(req,res);
+  } else {
+    res.redirect("/login");
+  }
+});
+
 
 
 module.exports = router;

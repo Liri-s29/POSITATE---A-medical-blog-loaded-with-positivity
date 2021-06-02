@@ -27,7 +27,7 @@ const createBlog = (req,res) => {
 
 const userBlog = (req, res)=>{
     Blog.Blog.find({user_id: req.user._id},(err, foundBlogs)=>{
-        res.render("userPage",{blog: foundBlogs.reverse(), user: req.user});
+        res.render("userPage",{blogs: foundBlogs.reverse(), user: req.user});
 
       })
 }
@@ -73,10 +73,19 @@ const singleBlog = (req, res)=>{
       });
 }
 
+const deleteBlog = (req,res)=>{
+      const blogid = req.body.blogid;
+      Blog.Blog.deleteOne({_id: blogid}, (err)=>{
+        if(!err){
+          res.redirect("/category/userpage");
+        }
+      });
+}
 module.exports = {
     createBlog: createBlog,
     userBlog: userBlog,
     blogCategory: blogCategory,
     createComment: createComment,
-    singleBlog: singleBlog
+    singleBlog: singleBlog,
+    deleteBlog: deleteBlog
 }

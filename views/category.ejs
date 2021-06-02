@@ -2,20 +2,29 @@
 <style>
     .postbox{
         display: inline;
-        box-shadow: 5px 8px #0cc; 
         background-color: rgb(231, 253, 231);
+        border-radius: 20px;
+        transition: box-shadow .3s;
     }
     .postbox:hover{
-        box-shadow: 5px 0px #0cc inset; 
-        /* background-color: #0cc; */
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 204, 204, 0.301) 0px 30px 60px -30px;    
+        cursor: pointer;    
     }
-    header {
+    .boom{
         background-repeat: no-repeat;
         text-align: center;
         background-image: url("<%=asset.image%>");
         background-size: 100%;
         width: 100%;
         height: 400px;
+        padding-top: 100px;
+        padding-left: 100px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+    }
+    .boom h1{
+        font-size: 100px;
+        color:rgb(66, 66, 66)
     }
     .container{
         position: relative;
@@ -26,15 +35,14 @@
 <body>
     <header>
     <%- include("partials/navbar")-%>
-    <div class="container">
+    <div class=" boom">
         <h1><%=asset.name%></h1>
-        <p>Find articles related to <%=asset.name%>...</p>
     </div>
     </header>
     <div class="col container ">
         <div class="row tm-row">
             <% blogs.forEach((blog)=>{%>
-                <div class="col-12 col-md-11 tm-post mb-4 postbox mt-2"  >
+                <div class="col-12 col-md-12 tm-post mb-4 postbox mt-2" onclick="location.href='/category/blog/<%=blog._id%>w<%=blog.category%>'" >
                     <hr style="border-top: 5px solid #0CC;">
                     
                         
@@ -58,6 +66,7 @@
             
         </div>
     </div>
+    
     <script src='home/js/jquery.js'></script>
     <script src='home/js/plugins.js'></script>
     <script src='home/js/scripts.js'></script>
