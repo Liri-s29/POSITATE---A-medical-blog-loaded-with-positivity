@@ -1,11 +1,10 @@
-# Positate
+# Positate [Check it out](https://positate.herokuapp.com/)
 
 ## Inspiration
 <p>
   There are so many issues related to health happening across the globe during this pandemic, we wanted to lend a hand virtually
 </p>
 
-##[Check it out](https://positate.herokuapp.com/)
 
 ## What it does
 <p>
