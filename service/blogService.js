@@ -27,7 +27,6 @@ const createBlog = (req,res) => {
 
 const userBlog = (req, res)=>{
     Blog.Blog.find({user_id: req.user._id},(err, foundBlogs)=>{
-
         res.render("userPage",{blogs: foundBlogs.reverse(), user: req.user});
 
       })
