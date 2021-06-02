@@ -44,16 +44,16 @@
             <% blogs.forEach((blog)=>{%>
                 
                 <div class="col-12 col-md-11 mt-2 postbox mx-auto" onclick="location.href='/category/blog/<%=blog._id%>w<%=blog.category%>'" >
-                    <div class="">  
+                    <div >  
                      <hr style="border-top: 5px solid #0CC;">
                     
                         
-                    <h2 class="tm-pt-30  tm-post-title"><%= blog.title %></h2>
+                    <h2 ><%= blog.title %></h2>
                                         
-                    <p class="tm-pt-30">
+                    <p >
                         <%=blog.content.substring(0,301)%>... <a href="/category/blog/<%=blog._id%>w<%=blog.category%>">Read More</a>
                     </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
+                    <div class="">
                         <span class=""><%= blog.createdAt%></span>
                     </div>
                     <hr style="border-top: 5px solid #0CC;">

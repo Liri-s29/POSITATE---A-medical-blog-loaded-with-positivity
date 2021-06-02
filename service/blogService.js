@@ -27,6 +27,7 @@ const createBlog = (req,res) => {
 
 const userBlog = (req, res)=>{
     Blog.Blog.find({user_id: req.user._id},(err, foundBlogs)=>{
+      
         res.render("userPage",{blogs: foundBlogs.reverse(), user: req.user});
 
       })
@@ -46,9 +47,13 @@ const home = (req, res)=>{
 const blogCategory = (req, res)=>{
     const category = req.params.categoryname;
     Blog.Blog.find({category: category},(err, foundBlogs)=>{
-        Asset.findOne({id: category}, (err, foundAsset)=>{
-          res.render("category",{blogs: foundBlogs.reverse(), user: req.user, asset: foundAsset});
-        })
+        if(!err){
+          Asset.findOne({id: category}, (err, foundAsset)=>{
+            if(!err){
+              res.render("category",{blogs: foundBlogs.reverse(), user: req.user, asset: foundAsset});
+            }
+          })
+        }
         
         
       });
