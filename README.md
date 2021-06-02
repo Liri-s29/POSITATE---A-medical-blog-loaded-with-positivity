@@ -1,4 +1,4 @@
-# Positate [Check it out](https://positate.herokuapp.com/)
+# Positate - [Link To Website](https://positate.herokuapp.com/)
 
 ## Inspiration
 <p>
