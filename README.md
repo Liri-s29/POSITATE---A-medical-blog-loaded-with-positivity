@@ -1,47 +1,10 @@
-# Positate
+# Positate - [Link To Website](https://positate.herokuapp.com/)
 
 ## Inspiration
 <p>
   There are so many issues related to health happening across the globe during this pandemic, we wanted to lend a hand virtually
 </p>
 
-## Instruction 
-## How to use
-
-Install Node.js if you don't have it : [Node Download Link](https://nodejs.org/en/) //Download recommended Version <br>
-
-Open termial in a directory, and run the following commands<br>
-```
-git clone https://github.com/Liri-s29/POSITATE---A-medical-blog-loaded-with-positivity
-cd POSITATE---A-medical-blog-loaded-with-positivity
-```
-**To install the dependencies**
-```
-npm i 
-npm install -g touch-cli
-``` 
-**Create a .env file**
-```
-touch .env
-```
-**Open the .env and add the following env vars**
-```
-GOOGLE_CLIENT_ID=   // Get this from https://console.cloud.google.com/apis/credentials //For setting up OAuth
-GOOGLE_CLIENT_SECRET= //Get this from https://console.cloud.google.com/apis/credentials //For setting up OAuth
-DBPASS= //Get this from MongoDB Atlas DataBase Access //For setting up DB
-```
-**Now, go back to the terminal and run**
-```
-node app.js
-```
-**You'll get a success message in your terminal**
-```
-Server in running on port 3001
-```
-**Now open your browser** and [Click Here](http://localhost:3001/) or Enter the url below
-```
-http://localhost:3001/
-```
 
 ## What it does
 <p>
