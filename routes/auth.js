@@ -69,8 +69,10 @@ router.post("/login", (req, res) => {
       console.log(err);
       res.redirect("/login");
     } else {
-      passport.authenticate('local', { successRedirect: '/secrets',
-                                   failureRedirect: '/login' })
+      passport.authenticate("local")(req, res, () => {
+        
+        res.redirect("/secrets");
+      });
     }
   });
 });
