@@ -45,7 +45,7 @@ router.post("/register", (req, res) => {
       } else {
         User.findOneAndUpdate(
           { username: req.body.username },
-          { $set: { name: req.body.name, image: "https://image.shutterstock.com/shutterstock/photos/1677509740/display_1500/stock-vector-default-avatar-profile-icon-social-media-user-vector-1677509740.jpg" } },
+          { $set: { name: req.body.name, image: "https://t4.ftcdn.net/jpg/03/53/98/09/360_F_353980967_CYaGQL0tUy9ydlsO4tWFDYVHa17v2Gy4.jpg" } },
           (err, foundData) => {
             if (err) {
               console.log(err);
