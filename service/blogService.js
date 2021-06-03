@@ -102,7 +102,7 @@ const deleteaccount = (req, res)=>{
   const userid = req.user._id;
   User.deleteOne({_id: userid},(err)=>{
     if(!err){
-      res.render("/");
+      res.redirect("/");
     }
   })
 }
