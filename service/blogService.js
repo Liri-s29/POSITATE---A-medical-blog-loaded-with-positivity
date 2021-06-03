@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const Blog = require("../database/models/blog_model");
 const Comment = require("../database/models/comment_model");
 const Asset = require("../database/models/assets");
+const User = require("./database/models/user_model");
 
 const createBlog = (req,res) => {
     const newBlog = new Blog.Blog({
@@ -96,6 +97,16 @@ const deleteBlog = (req,res)=>{
         }
       });
 }
+
+const deleteaccount = (req, res)=>{
+  const userid = req.user._id;
+  User.deleteOne({_id: userid},(err)=>{
+    if(!err){
+      res.render("/");
+    }
+  })
+}
+
 module.exports = {
     createBlog: createBlog,
     userBlog: userBlog,
@@ -103,5 +114,6 @@ module.exports = {
     createComment: createComment,
     singleBlog: singleBlog,
     deleteBlog: deleteBlog,
-    home: home
+    home: home,
+    deleteaccount: deleteaccount
 }

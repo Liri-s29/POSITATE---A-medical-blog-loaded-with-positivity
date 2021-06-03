@@ -34,6 +34,15 @@ router.get("/createblog", (req, res) => {
     }
 });
 
+router.post("/deleteAccount", (req, res)=>{
+  if (req.isAuthenticated()) {
+    blogService.deleteaccount(req,res);
+    
+  } else {
+    res.redirect("/login");
+  }
+})
+
 router.get("/:categoryname", (req, res)=>{
     if (req.isAuthenticated()) {
       
