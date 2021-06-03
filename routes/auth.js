@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 
 
-const User = require("../database/models/user_model");
+
 
 router.get("/login", (req, res) => {
   if (req.isAuthenticated()) {

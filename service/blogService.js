@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Blog = require("../database/models/blog_model");
 const Comment = require("../database/models/comment_model");
 const Asset = require("../database/models/assets");
-const User = require("./database/models/user_model");
+const User = require("../database/models/user_model");
 
 const createBlog = (req,res) => {
     const newBlog = new Blog.Blog({
