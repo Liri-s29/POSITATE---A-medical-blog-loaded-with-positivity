@@ -34,7 +34,7 @@ router.get("/createblog", (req, res) => {
     }
 });
 
-router.post("/deleteAccount", (req, res)=>{
+router.post("/deleteaccount", (req, res)=>{
   if (req.isAuthenticated()) {
     blogService.deleteaccount(req,res);
     
